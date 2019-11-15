@@ -24,7 +24,7 @@ func main() {
 		group_v2.POST("/logOut", logOuting)
 	}
 
-	router.Run(":8081")
+	router.Run(":8080")
 
 }
 

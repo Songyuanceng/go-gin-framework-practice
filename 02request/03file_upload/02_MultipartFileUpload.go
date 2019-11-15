@@ -16,7 +16,7 @@ func main() {
 		if err != nil {
 			log.Fatalln("发生错误：", err)
 		}
-		files := multipartFile.File["upload[]"] //postman测试的(在key字段写upload[])
+		files := multipartFile.File["upload"] //postman测试的(在key字段写upload)
 
 		for _, file := range files {
 			log.Println("fileName=", file.Filename)
