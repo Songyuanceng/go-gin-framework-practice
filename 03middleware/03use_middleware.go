@@ -33,7 +33,7 @@ func main() {
 		authorized.POST("/logout", logOuting)
 
 		// nested group
-		testing := authorized.Group("testing")
+		testing := authorized.Group("/testing")
 		testing.GET("/analytics", analyticsEndpoint)
 	}
 

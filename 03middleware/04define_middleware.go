@@ -15,7 +15,8 @@ func logger() gin.HandlerFunc {
 
 		//before request
 
-		ctx.Next() //传递到下一个func(gin.Context)
+		ctx.Next() //放行，传递到下一个func(gin.Context)
+		//ctx.Abort()//退出当前中间件处理
 
 		//after request
 		latency := time.Since(t)
