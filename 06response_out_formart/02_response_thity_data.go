@@ -23,6 +23,8 @@ func main() {
 			"Content-Disposition": `attachment; filename="gopher.png"`,
 		}
 
+		//bytes,_ :=ioutil.ReadAll(response.Body)
+		//c.Data(http.StatusOK, contentType, bytes)
 		c.DataFromReader(http.StatusOK, contentLength, contentType, reader, extraHeaders)
 	})
 	router.Run(":8080")
