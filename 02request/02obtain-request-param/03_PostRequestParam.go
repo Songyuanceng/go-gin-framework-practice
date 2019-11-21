@@ -10,7 +10,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.POST("/user", func(c *gin.Context) {
+	router.POST("/users", func(c *gin.Context) {
 		name := c.PostForm("name")
 		age := c.DefaultPostForm("age", "18") //设置默认值
 

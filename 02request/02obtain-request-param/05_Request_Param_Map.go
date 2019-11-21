@@ -10,7 +10,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.POST("/user", func(c *gin.Context) {
+	router.POST("/users", func(c *gin.Context) {
 		ids := c.QueryMap("ids")
 
 		names := c.PostFormMap("names")

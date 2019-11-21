@@ -10,8 +10,8 @@ import (
 func main() {
 	router := gin.Default()
 
-	// 匹配的url格式:  /user?firstname=Jane&lastname=Doe
-	router.GET("/user", func(c *gin.Context) {
+	// 匹配的url格式:  /users?firstname=Jane&lastname=Doe
+	router.GET("/users", func(c *gin.Context) {
 		firstName := c.DefaultQuery("firstname", "song") //带有默认值获取参数,获取不到firstname值时默认song
 		lastName := c.Query("lastname")                  //c.Request.URL.Query().Get("lastname")的简写
 

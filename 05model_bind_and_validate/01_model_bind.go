@@ -8,7 +8,7 @@ import (
 
 //定义绑定结构体
 type Login struct {
-	User     string `form:"user" json:"user" xml:"user" binding:"required"`
+	User     string `form:"users" json:"users" xml:"users" binding:"required"`
 	Password string `form:"password" json:"password" xml:"password" binding:"required"`
 }
 
@@ -16,7 +16,7 @@ type Login struct {
 func main() {
 	router := gin.Default()
 
-	//绑定Json({"user": "manu", "password": "123"})
+	//绑定Json({"users": "manu", "password": "123"})
 	router.POST("loginJson", func(c *gin.Context) {
 		var login Login
 		if err := c.ShouldBindJSON(&login); err != nil {
@@ -35,7 +35,7 @@ func main() {
 	//绑定Xml
 	//	<?xml version="1.0" encoding="UTF-8"?>
 	//	<root>
-	//		<user>user</user>
+	//		<users>users</users>
 	//		<password>123</password>
 	//	</root>
 	router.POST("/loginXml", func(c *gin.Context) {
@@ -53,7 +53,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"status": "you are logged in"})
 	})
 
-	//帮定表单(user=manu&password=123)
+	//帮定表单(users=manu&password=123)
 	router.POST("/loginForm", func(c *gin.Context) {
 		var login Login
 		if err := c.ShouldBindQuery(&login); err != nil {

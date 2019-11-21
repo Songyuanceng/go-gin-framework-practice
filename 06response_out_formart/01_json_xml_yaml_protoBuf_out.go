@@ -21,7 +21,7 @@ func main() {
 	//输出结构体json
 	router.GET("/testJson2", func(c *gin.Context) {
 		var msg struct {
-			Name    string `json:"user"`
+			Name    string `json:"users"`
 			Message string
 			Number  int
 		}

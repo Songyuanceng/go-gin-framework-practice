@@ -11,7 +11,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	router.POST("/user", func(c *gin.Context) {
+	router.POST("/users", func(c *gin.Context) {
 		id := c.Query("id")
 		age := c.DefaultQuery("age", "0") //从url中获取
 

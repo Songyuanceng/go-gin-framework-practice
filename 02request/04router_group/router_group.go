@@ -11,7 +11,7 @@ import (
 func main() {
 	router := gin.Default()
 
-	group_v1 := router.Group("/user")
+	group_v1 := router.Group("/users")
 	{
 		group_v1.POST("/register", registering)
 		group_v1.POST("/login", logining)
