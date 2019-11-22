@@ -3,6 +3,7 @@ module go-gin-framework-practice
 go 1.13
 
 require (
+	github.com/gin-contrib/multitemplate v0.0.0-20190914010127-bba2ccfe37ec // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.4.0
 	github.com/golang/protobuf v1.3.2 // indirect
