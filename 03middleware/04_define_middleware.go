@@ -33,8 +33,8 @@ func main() {
 	r := gin.New()
 	r.Use(logger())
 
-	r.GET("/test", func(ctx *gin.Context) {
-		example := ctx.MustGet("example").(string)
+	r.GET("/test", func(c *gin.Context) {
+		example := c.MustGet("example").(string)
 
 		//it would print: "12345"
 		log.Println(example)

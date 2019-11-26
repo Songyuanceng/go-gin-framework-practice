@@ -10,10 +10,10 @@ import (
 
 //html渲染
 // 使用LoadHTMLGlob()--加载一个路径下所有templates 或者 LoadHTMLFiles()--加载指定路径下的html文件
-func main01() {
+func main() {
 	router := gin.Default()
-	router.LoadHTMLGlob("./07_html_handle/templates/*")
-	//router.LoadHTMLFiles("./07_html_handle/templates/template1.html", "./07_html_handle/templates/template2.html")
+	//router.LoadHTMLGlob("./07_html_handle/templates/*")
+	router.LoadHTMLFiles("./07_html_handle/templates/index.tmpl", "./07_html_handle/templates/footer.tmpl", "./07_html_handle/templates/header.tmpl")
 	router.GET("/index", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{
 			"title": "This is a website!",
@@ -46,7 +46,7 @@ func main02() {
 }
 
 //自定义模板函数
-func main() {
+func main01() {
 	router := gin.Default()
 	router.Delims("{", "}")
 	router.SetFuncMap(template.FuncMap{"formartAsDate": formartAsDate})
