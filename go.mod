@@ -10,6 +10,7 @@ require (
 	github.com/json-iterator/go v1.1.7 // indirect
 	github.com/mattn/go-isatty v0.0.10 // indirect
 	github.com/ugorji/go v1.1.7 // indirect
+	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e // indirect
 	golang.org/x/sys v0.0.0-20191024172528-b4ff53e7a1cb // indirect
 	gopkg.in/yaml.v2 v2.2.4 // indirect
 )
