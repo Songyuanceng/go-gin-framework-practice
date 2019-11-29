@@ -12,6 +12,7 @@ type structA struct {
 }
 
 type structB struct {
+	//structA //匿名实现继承的绑定不上去 输出：{"a":"","b":"world"}
 	NestedStruct structA
 	FieldB       string `form:"field_b"`
 }
@@ -36,7 +37,7 @@ func getDataB(c *gin.Context) {
 	c.JSON(
 		http.StatusOK,
 		gin.H{
-			"a": b.NestedStruct,
+			"a": b.FieldA,
 			"b": b.FieldB,
 		})
 }
