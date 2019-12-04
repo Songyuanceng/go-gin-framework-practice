@@ -37,7 +37,7 @@ func getDataB(c *gin.Context) {
 	c.JSON(
 		http.StatusOK,
 		gin.H{
-			"a": b.FieldA,
+			"a": b.NestedStruct,
 			"b": b.FieldB,
 		})
 }
