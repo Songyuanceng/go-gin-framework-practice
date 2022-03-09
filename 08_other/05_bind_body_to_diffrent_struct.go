@@ -16,8 +16,8 @@ type FormB struct {
 
 func shouldBind(c *gin.Context) {
 	foo := FormA{}
-	bar := FormB{}
-	if err := c.ShouldBind(); err == nil {
+	//bar := FormB{}
+	if err := c.ShouldBind(&foo); err == nil {
 		c.JSON(http.StatusOK, gin.H{})
 	}
 }
