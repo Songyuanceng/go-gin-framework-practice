@@ -20,11 +20,11 @@ func logger() gin.HandlerFunc {
 
 		//after request
 		latency := time.Since(t)
-		log.Print(latency)
+		log.Println("time", latency)
 
 		//access the status we are sending
 		status := ctx.Writer.Status()
-		log.Println(status)
+		log.Println("中间件执行完毕", status)
 	}
 
 }
@@ -37,7 +37,7 @@ func main() {
 		example := c.MustGet("example").(string)
 
 		//it would print: "12345"
-		log.Println(example)
+		log.Println("example", example)
 	})
 
 	//Listen and serve on 0.0.0.0:8080
